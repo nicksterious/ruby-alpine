@@ -19,7 +19,8 @@ RUN apk update && apk add --update ca-certificates curl gnupg && \
     gem install -N nokogiri -- --use-system-libraries && \
     gem install passenger -v 6.0.9 && \
     gem install RedCloth -v 4.3.2 && \
-    gem install socketclusterclient -v 0.1.0
+    gem install socketclusterclient -v 0.1.0 && \
+    gem install sass-rails -v 5.1.0
 
 RUN passenger-install-apache2-module
 
