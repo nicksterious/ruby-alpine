@@ -11,7 +11,8 @@ ENV BUILD=0.0.1
 RUN apk update && apk add --update ca-certificates curl gnupg && \
 
     # install build deps
-    apk add $UTILS $BASE_PACKAGES $DEV_PACKAGES $DEV_PACKAGES2 && \
+    apk add $UTILS $BASE_PACKAGES && \
+    apk add $DEV_PACKAGES $DEV_PACKAGES2 && \
     apk add --update-cache --repository 'http://nl.alpinelinux.org/alpine/edge/testing' libexecinfo libexecinfo-dev && \
     apk add shared-mime-info && \
     apk add apache2 apache2-proxy apache2-ctl && \
