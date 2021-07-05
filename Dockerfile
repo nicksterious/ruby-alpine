@@ -3,7 +3,7 @@ FROM ruby:3.0-alpine3.13
 ENV PATH="/passenger/bin:$PATH" \
     UTILS="mc nmap wget curl" \
     BASE_PACKAGES="tzdata ruby-io-console mariadb-connector-c" \
-    DEV_PACKAGES="zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev postgresql-dev mysql-dev apache2-dev apr-util apr-util-dev mariadb-connector-c-dev mariadb-dev musl-dev build-deps" \
+    DEV_PACKAGES="zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev postgresql-dev mysql-dev apache2-dev apr-util apr-util-dev mariadb-connector-c-dev mariadb-dev musl-dev" \
     DEV_PACKAGES2="procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev build-base linux-headers curl-dev pcre-dev ruby-dev coreutils libffi libffi-dev"
 
 ENV BUILD=0.0.1
