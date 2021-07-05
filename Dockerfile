@@ -26,8 +26,7 @@ RUN apk update && apk add --update ca-certificates curl gnupg && \
 
 RUN passenger-install-apache2-module
 
-    # cleanup
-RUN apk del $DEV_PACKAGES $DEV_PACKAGES2
+RUN apk add nodejs npm
 
 RUN touch /entrypoint.sh
 WORKDIR /
