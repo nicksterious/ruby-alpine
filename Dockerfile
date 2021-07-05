@@ -1,21 +1,20 @@
 FROM ruby:3.0-alpine3.13
 
-ENV PATH="/passenger/bin:$PATH" \
-    UTILS="mc nmap wget curl" \
-    BASE_PACKAGES="tzdata ruby-io-console mariadb-connector-c" \
-    DEV_PACKAGES="zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev postgresql-dev mysql-dev apache2-dev apr-util apr-util-dev mariadb-connector-c-dev mariadb-dev musl-dev" \
-    DEV_PACKAGES2="procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev build-base linux-headers curl-dev pcre-dev ruby-dev coreutils libffi libffi-dev"
+ENV UTILS="mc nmap wget curl" \
+    BASE_PACKAGES="tzdata  shared-mime-info mariadb-connector-c" \
+    DEV_PACKAGES="zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev postgresql-dev" \
+    DEV_PACKAGES2="procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev build-base linux-headers curl-dev pcre-dev coreutils libffi libffi-dev" \
+    APACHE_PACKAGES="apache2-dev apr-util apr-util-dev apache2 apache2-proxy apache2-ctl" \
+    RUBY_PACKAGES="ruby-dev ruby-io-console" \
+    MARIADB_PACKAGES="mysql-dev mariadb-connector-c-dev mariadb-dev musl-dev"
 
 ENV BUILD=0.0.1
 
 RUN apk update && apk add --update ca-certificates curl gnupg && \
-
-    # install build deps
     apk add $UTILS $BASE_PACKAGES && \
     apk add $DEV_PACKAGES $DEV_PACKAGES2 && \
+    apk add $APACHE_PACKAGES $MARIADB_PACKAGES && \
     apk add --update-cache --repository 'http://nl.alpinelinux.org/alpine/edge/testing' libexecinfo libexecinfo-dev && \
-    apk add shared-mime-info && \
-    apk add apache2 apache2-proxy apache2-ctl && \
     apk add nodejs npm && \
     gem install oj && \
     gem install -N nokogiri -- --use-system-libraries && \
@@ -26,8 +25,6 @@ RUN apk update && apk add --update ca-certificates curl gnupg && \
     gem install mysql2 -v 0.5.3
 
 RUN passenger-install-apache2-module
-
-RUN apk add nodejs npm
 
 RUN touch /entrypoint.sh
 WORKDIR /
