@@ -26,7 +26,7 @@ RUN apk update && apk add --update ca-certificates curl gnupg && \
     gem install oj && \
     gem install -N nokogiri -- --use-system-libraries && \
     gem install passenger -v 6.0.9 && \
-    gem install RedCloth && \
+    gem install RedCloth -v 4.3.2 && \
     apk add apache2 apache2-proxy apache2-ctl
 
 RUN passenger-install-apache2-module
