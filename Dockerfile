@@ -11,7 +11,6 @@ ENV BUILD=0.0.1
 RUN apk update && apk add --update ca-certificates curl gnupg && \
 
     # install build deps
-    # apk add ruby procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev ruby-rake build-base linux-headers curl-dev pcre-dev ruby-dev coreutils ruby-io-console libffi libffi-dev ruby-bundler && \
     apk add $UTILS $BASE_PACKAGES $DEV_PACKAGES $DEV_PACKAGES2 && \
     apk add --update-cache --repository 'http://nl.alpinelinux.org/alpine/edge/testing' libexecinfo libexecinfo-dev && \
     apk add shared-mime-info && \
