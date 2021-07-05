@@ -15,19 +15,12 @@ RUN apk update && apk add --update ca-certificates curl gnupg && \
     apk add $UTILS $BASE_PACKAGES $DEV_PACKAGES $DEV_PACKAGES2 && \
     apk add --update-cache --repository 'http://nl.alpinelinux.org/alpine/edge/testing' libexecinfo libexecinfo-dev && \
     apk add shared-mime-info && \
-
-
-    # Install ffi while we have an build development available. Version is from the Gemfile.lock in the actual project, adjust to your needs!
-    #gem install ffi -v 1.9.10 && \
-    # The same goes for eventmachine
-    #gem install eventmachine -v 1.0.9.1 && \
-    # ...and json. And any other gem that requires native compilation.
-    # gem install json -v 1.8.3 && \
+    apk add apache2 apache2-proxy apache2-ctl && \
     gem install oj && \
     gem install -N nokogiri -- --use-system-libraries && \
     gem install passenger -v 6.0.9 && \
     gem install RedCloth -v 4.3.2 && \
-    apk add apache2 apache2-proxy apache2-ctl
+    gem install socketclusterclient -v 0.1.0
 
 RUN passenger-install-apache2-module
 
