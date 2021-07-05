@@ -29,6 +29,7 @@ RUN apk update && apk add --update ca-certificates curl gnupg && \
     apk add nodejs npm && \
     gem install oj && \
     gem install RedCloth -v 4.3.2 && \
+    gem install stackprof -v 0.2.17 && \
     gem install socketclusterclient -v 0.1.0 && \
     gem install sass-rails -v 5.1.0 && \
     gem install mysql2 -v 0.5.3
