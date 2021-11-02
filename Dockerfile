@@ -1,7 +1,7 @@
 
 ######################
 # Stage: Passenger Builder
-FROM ruby:3-alpine3.13 as PassBuilder
+FROM ruby:3.0.2-alpine3.13 as PassBuilder
 
 ENV DEV_PACKAGES="tzdata shared-mime-info zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev mariadb-connector-c" \
     DEV_PACKAGES2="procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev build-base linux-headers curl-dev pcre-dev coreutils" \
