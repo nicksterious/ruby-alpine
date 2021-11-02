@@ -12,3 +12,19 @@ RUN apk add $DEV_PACKAGES $DEV_PACKAGES2 $APACHE_PACKAGES && \
     gem install passenger -v 6.0.9
     
 RUN passenger-install-apache2-module
+
+RUN apk add mc nmap wget curl git \
+    imagemagick-dev \
+    imagemagick \
+    npm nodejs \
+    mariadb-connector-c \
+    bash \
+    postgresql-dev \
+    python3 python2 \
+    postgresql mysql-client \
+    php7-apache2 php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-pdo php7-pdo_mysql php7-xml php7-xmlreader php7-xmlwriter \
+    php7-ctype php7-json php7-tokenizer php7-bcmath php7-openssl php7-zip php7-session
+
+RUN ln -sf python3 /usr/bin/python
+
+RUN npm install -g yarn
