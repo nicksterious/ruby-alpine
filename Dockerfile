@@ -28,3 +28,9 @@ RUN apk add mc nmap wget curl git \
 RUN ln -sf python3 /usr/bin/python
 
 RUN npm install -g yarn
+
+
+ADD src/Gemfile* ./
+RUN bundle install
+
+

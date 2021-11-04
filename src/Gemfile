@@ -1,0 +1,234 @@
+source 'https://rubygems.org'
+
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem 'dotenv-rails', git: "https://github.com/bkeepers/dotenv", branch: "master"
+
+ruby '3.0.2'
+
+# use local mimemagic gem to delay update to rails 6.1
+gem 'mimemagic' #, '0.3.3', git: "https://github.com/nicksterious/mimemagic-0.3.3", branch: "main"
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 6.1.0'
+
+# Use mysql as the database for Active Record
+gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'pg'
+
+# Use Puma as the app server
+gem 'puma', '~> 3.11'
+
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'yui-compressor'
+gem 'coffee-rails', '~> 5.0.0'
+# gem 'mini_racer', platforms: :ruby
+# gem 'turbolinks', '~> 5'
+gem 'trix'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'
+
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
+# write images in a structured path
+gem 'activestorage_direct_disk'
+gem 'image_processing', '~> 1.2'
+
+# create screenshots or preview of web pages
+gem 'gastly', require: false
+# imagemagick stuff
+gem 'mini_magick'
+
+gem 'seed_dump'
+
+# https://github.com/roidrage/lograge
+gem 'lograge'
+
+group :development, :test do
+    gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+    gem 'factory_bot_rails'
+    gem 'faker'
+end
+
+group :development do
+    gem 'listen', '>= 3.0.5', '< 3.2'
+
+# removed spring as it doesn't really work/help
+#    gem 'spring'
+#    gem 'spring-watcher-listen', '~> 2.0.0'
+#    gem 'spring-commands-rspec'
+
+    # profiling
+    gem 'rack-mini-profiler'
+    gem 'memory_profiler'
+    gem 'flamegraph'
+    gem 'stackprof'
+
+    # n+1 detector
+    gem 'xmpp4r' # for bullet notifications altho they are turned off, it still fucking requires the gem
+    # n+1 query detector
+    gem 'bullet'
+
+    # security report
+    gem 'brakeman'
+    gem 'rails_best_practices'
+
+    # use chrome extension to see what's happening on the server side
+    #gem 'meta_request'
+    # this shit above used to work and it was quite useful, but then it stopped working out of the sudden
+
+    # next two gems are part of better errors https://github.com/BetterErrors/better_errors
+    gem "better_errors"
+    gem "binding_of_caller"
+
+    # analyze pg queries
+    gem 'activerecord-explain-analyze'
+
+    # profile application gems load time
+    # gem 'bumbler' # fails with some activesupport error
+end
+
+group :assets do
+    #  gem 'therubyracer'
+end
+
+group :test do
+    gem 'webrick'
+    gem 'rspec-rails', '~> 4.0' #, '4.0.0.beta3'
+    # TODO bump rspec to stable once released
+    gem 'guard-rspec'
+    gem 'guard-shell'
+    gem 'database_cleaner'
+    gem 'capybara', '>= 2.15'
+    gem 'capybara-selenium'
+    gem 'webdrivers', '~> 4.2' #  see how the fuck to use this
+    gem 'capybara-chromedriver-logger'
+    gem 'rest-client'
+    gem 'capybara-screenshot'
+    gem 'shoulda-matchers'
+    gem 'rspec-repeat'
+    gem 'simplecov', require: false
+    gem 'rails-controller-testing'
+    gem 'rspec-sidekiq'
+
+    gem 'timecop' # time travel for specs
+
+    # the gem below generates some niceish test reports but doesn't work so well. try finding something similar
+    #gem 'rspec_html_reporter'
+end # :test
+
+group :production do
+    # set up more gems for monitoring etc in production production
+    #gem 'skylight'
+    #gem 'honeybadger'
+    # logstash?
+end # :production
+
+#sentry.io
+gem "sentry-ruby"
+gem "sentry-rails"
+gem "sentry-sidekiq"
+
+gem 'pg_query', '>= 0.9.0'
+# view/build reports/BI
+gem 'blazer', git: "https://github.com/nicksterious/blazer", branch: "main"
+# log various stuff in the app
+gem 'notable'
+
+gem 'trend', git: "https://github.com/nicksterious/trend", branch: "main"
+
+# send events to statsd -> grafana
+gem 'statsd-instrument', require: false
+
+gem 'device_detector', require: false
+
+# gem 'rack-attack' # help with security https://github.com/kickstarter/rack-attack
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'oj' # if oj stops/not working go back to gem 'json' or  gem 'multi_json'
+
+gem 'nokogiri', require: false
+gem 'stringex'
+gem 'savon', require: false
+gem 'faraday', require: false
+gem 'socketclusterclient', '0.1.0', require: false
+
+gem 'dalli'
+gem 'connection_pool'
+gem 'rb-readline'
+gem 'http_accept_language'
+
+# the rubygems version is broken
+# gem 'active_model_otp', :git => 'https://github.com/heapsource/active_model_otp.git'
+# the git http clone command was failiing for some stupid reason, got this set up locally
+gem 'active_model_otp'#, git: "https://github.com/nicksterious/active_model_otp", branch: "main"
+gem 'rqrcode', require: false
+
+gem 'twilio-ruby', require: false
+
+gem 'geocoder'
+gem 'geokit'
+
+gem 'redis-namespace'
+gem 'sidekiq'
+
+gem 'activerecord-session_store'
+
+gem 'slim'
+gem 'haml'
+# If you'd like to replace Rails's Erb-based generators with Haml, add haml-rails to your Gemfile as well.
+#gem 'haml-rails'
+
+gem 'paper_trail'
+gem 'action_policy'
+
+#gem "select2-rails"
+gem "select2-rails", git: "https://github.com/argerim/select2-rails", branch: "master"
+
+
+# for the various templates throughout the app
+gem 'liquid'
+gem 'RedCloth'
+
+gem 'csv', require: false
+
+gem 'chartkick', require: false
+gem 'groupdate'
+
+gem 'bootstrap_form', '>= 4.2.0'
+
+gem 'aasm', require: false
+
+gem 'gibbon', require: false
+gem 'prowl', require: false
+gem 'slack-notifier', require: false
+
+gem 'cloudflare', require: false
+
+gem 'draper'
+
+gem 'whenever', require: false
+
+# for the signup form
+# https://github.com/markets/invisible_captcha
+gem 'invisible_captcha'
+
+# message queueing
+gem 'bunny', require: false
+gem 'sneakers', git: "https://github.com/nicksterious/sneakers", branch: "main"
+
+gem 'credit_card_validator', require: false
+
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+
+# foreman
+gem 'foreman', require: false
