@@ -31,6 +31,6 @@ RUN npm install -g yarn
 
 
 ADD src/Gemfile* ./
-RUN bundle install
+RUN bundle install --jobs=8
 
 
