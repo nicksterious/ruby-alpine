@@ -132,10 +132,8 @@ group :production do
     # logstash?
 end # :production
 
-#sentry.io
-gem "sentry-ruby"
-gem "sentry-rails"
-gem "sentry-sidekiq"
+# error tracking with rollbar
+gem 'rollbar'
 
 gem 'pg_query', '>= 0.9.0'
 # view/build reports/BI
