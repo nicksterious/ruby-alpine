@@ -230,3 +230,5 @@ gem 'rexml', '~> 3.2', '>= 3.2.4'
 
 # foreman
 gem 'foreman', require: false
+
+gem 'aws-sdk', '~> 3', require: false
