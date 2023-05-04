@@ -7,6 +7,7 @@ ruby '3.0.2'
 
 # use local mimemagic gem to delay update to rails 6.1
 gem 'mimemagic' #, '0.3.3', git: "https://github.com/nicksterious/mimemagic-0.3.3", branch: "main"
+gem 'sassc-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
