@@ -1829,12 +1829,8 @@ GEM
       ffi (~> 1.0)
     rb-readline (0.5.5)
     rbtree (0.4.6)
-    redis (5.0.6)
-      redis-client (>= 0.9.0)
     redis-client (0.14.1)
       connection_pool
-    redis-namespace (1.10.0)
-      redis (>= 4)
     regexp_parser (2.8.0)
     request_store (1.5.1)
       rack (>= 1.4)
@@ -2083,7 +2079,6 @@ DEPENDENCIES
   rails-controller-testing
   rails_best_practices
   rb-readline
-  redis-namespace
   rest-client
   rexml (~> 3.2, >= 3.2.4)
   rollbar

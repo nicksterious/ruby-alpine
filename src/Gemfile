@@ -7,7 +7,6 @@ ruby '3.0.2'
 
 # use local mimemagic gem to delay update to rails 6.1
 gem 'mimemagic' #, '0.3.3', git: "https://github.com/nicksterious/mimemagic-0.3.3", branch: "main"
-gem 'sassc-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
@@ -20,8 +19,9 @@ gem 'pg'
 gem 'puma', '~> 3.11'
 
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'sassc-rails'
 gem 'terser'
+gem 'uglifier', '>= 1.3.0'
 gem 'yui-compressor'
 gem 'coffee-rails', '~> 5.0.0'
 # gem 'mini_racer', platforms: :ruby
@@ -178,7 +178,10 @@ gem 'twilio-ruby', require: false
 gem 'geocoder'
 gem 'geokit'
 
-gem 'redis-namespace'
+# sidekiq crashes with a namespace:
+### ArgumentError: Your Redis configuration uses the namespace 'sidekiq' but this feature isn't supp
+### orted by redis-client. Either use the redis adapter or remove the namespace.
+# gem 'redis-namespace'
 gem 'sidekiq'
 
 gem 'activerecord-session_store'
