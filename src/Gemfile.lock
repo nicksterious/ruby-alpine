@@ -136,6 +136,7 @@ GEM
       gyoku (>= 0.4.0)
       nokogiri
     amq-protocol (2.3.2)
+    android_key_attestation (0.3.0)
     async (1.31.0)
       console (~> 1.10)
       nio4r (~> 2.3)
@@ -1541,12 +1542,7 @@ GEM
     aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
     base_app (1.0.6)
-    better_errors (2.10.0)
-      erubi (>= 1.0.0)
-      rack (>= 0.9.0)
-      rouge (>= 1.0.0)
-    binding_of_caller (1.0.0)
-      debug_inspector (>= 0.0.1)
+    bindata (2.5.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap_form (5.1.0)
@@ -1579,6 +1575,7 @@ GEM
     capybara-selenium (0.0.6)
       capybara
       selenium-webdriver
+    cbor (0.5.10.1)
     chartkick (5.0.2)
     chronic (0.10.2)
     chunky_png (1.4.0)
@@ -1599,6 +1596,9 @@ GEM
     connection_pool (2.4.0)
     console (1.16.2)
       fiber-local
+    cose (1.3.1)
+      cbor (~> 0.5.9)
+      openssl-signature_algorithm (~> 1.0)
     crass (1.0.6)
     credit_card_validator (1.3.2)
       base_app (>= 1.0.5)
@@ -1611,7 +1611,6 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     date (3.3.3)
-    debug_inspector (1.1.0)
     device_detector (1.1.0)
     diff-lcs (1.5.0)
     docile (1.4.0)
@@ -1645,9 +1644,6 @@ GEM
     flamegraph (0.9.5)
     foreman (0.87.2)
     formatador (1.1.0)
-    gastly (1.1.0)
-      mini_magick (~> 4.2)
-      phantomjs (~> 2.1.1)
     geocoder (1.8.1)
     geokit (1.14.0)
     gibbon (3.4.4)
@@ -1678,10 +1674,6 @@ GEM
     gyoku (1.4.0)
       builder (>= 2.1.2)
       rexml (~> 3.0)
-    haml (6.1.1)
-      temple (>= 0.8.2)
-      thor
-      tilt
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -1759,13 +1751,15 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     oj (3.14.3)
+    openssl (3.3.1)
+    openssl-signature_algorithm (1.3.0)
+      openssl (> 2.0)
     paper_trail (14.0.0)
       activerecord (>= 6.0)
       request_store (~> 1.4)
     pg (1.5.3)
     pg_query (4.2.0)
       google-protobuf (>= 3.19.2)
-    phantomjs (2.1.1.0)
     protocol-hpack (1.4.2)
     protocol-http (0.24.1)
     protocol-http1 (0.15.0)
@@ -1843,7 +1837,6 @@ GEM
     rexml (3.2.5)
     rollbar (3.4.0)
     rotp (6.2.2)
-    rouge (4.1.0)
     rqrcode (2.1.2)
       chunky_png (~> 1.0)
       rqrcode_core (~> 1.0)
@@ -1882,25 +1875,8 @@ GEM
     rubyzip (2.3.2)
     safely_block (0.3.0)
       errbase (>= 0.1.1)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-    sass-rails (5.1.0)
-      railties (>= 5.2.0)
-      sass (~> 3.1)
-      sprockets (>= 2.8, < 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
-      tilt (>= 1.1, < 3)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
+    safety_net_attestation (0.5.0)
+      jwt (>= 2.0, < 4.0)
     savon (2.14.0)
       akami (~> 1.2)
       builder (>= 2.1.2)
@@ -1937,9 +1913,6 @@ GEM
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
     slack-notifier (2.4.0)
-    slim (5.1.0)
-      temple (~> 0.10.0)
-      tilt (>= 2.0.6, < 2.2)
     socketclusterclient (0.1.0)
       websocket-eventmachine-client (~> 1.2)
     sorted_set (1.0.3)
@@ -1955,14 +1928,17 @@ GEM
     stackprof (0.2.25)
     statsd-instrument (3.5.8)
     stringex (2.8.6)
-    temple (0.10.0)
-    terser (1.1.14)
+    terser (1.1.20)
       execjs (>= 0.3.0, < 3)
     thor (1.2.1)
     tilt (2.1.0)
     timecop (0.9.6)
     timeout (0.3.2)
     timers (4.3.5)
+    tpm-key_attestation (0.14.1)
+      bindata (~> 2.4)
+      openssl (> 2.0)
+      openssl-signature_algorithm (~> 1.0)
     traces (0.9.1)
     trix (0.10.1)
       rails
@@ -1972,8 +1948,6 @@ GEM
       nokogiri (>= 1.6, < 2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
@@ -1982,6 +1956,14 @@ GEM
       addressable
       httpi (~> 3.0)
       nokogiri (>= 1.4.2)
+    webauthn (3.4.2)
+      android_key_attestation (~> 0.3.0)
+      bindata (~> 2.4)
+      cbor (~> 0.5.9)
+      cose (~> 1.1)
+      openssl (>= 2.2)
+      safety_net_attestation (~> 0.5.0)
+      tpm-key_attestation (~> 0.14.0)
     webdrivers (4.7.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
@@ -2003,7 +1985,6 @@ GEM
     xmpp4r (0.5.6)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yui-compressor (0.12.0)
     zeitwerk (2.6.8)
 
 PLATFORMS
@@ -2018,8 +1999,6 @@ DEPENDENCIES
   activerecord-session_store
   activestorage_direct_disk
   aws-sdk (~> 3)
-  better_errors
-  binding_of_caller
   blazer!
   bootsnap (>= 1.1.0)
   bootstrap_form (>= 4.2.0)
@@ -2047,14 +2026,12 @@ DEPENDENCIES
   faraday
   flamegraph
   foreman
-  gastly
   geocoder
   geokit
   gibbon
   groupdate
   guard-rspec
   guard-shell
-  haml
   http_accept_language
   image_processing (~> 1.2)
   invisible_captcha
@@ -2086,8 +2063,6 @@ DEPENDENCIES
   rspec-rails (~> 4.0)
   rspec-repeat
   rspec-sidekiq
-  sass-rails (~> 5.0)
-  sassc-rails
   savon
   seed_dump
   select2-rails!
@@ -2095,24 +2070,23 @@ DEPENDENCIES
   sidekiq
   simplecov
   slack-notifier
-  slim
   sneakers!
   socketclusterclient (= 0.1.0)
   stackprof
   statsd-instrument
   stringex
-  terser
+  terser (~> 1.1.14)
+  tilt (= 2.1.0)
   timecop
   trend!
   trix
   twilio-ruby
   tzinfo-data
-  uglifier (>= 1.3.0)
+  webauthn
   webdrivers (~> 4.2)
   webrick
   whenever
   xmpp4r
-  yui-compressor
 
 RUBY VERSION
    ruby 3.0.2p107
