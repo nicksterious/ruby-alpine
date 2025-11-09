@@ -8,4 +8,4 @@ This image is sized at about 3 Gb which may be large for some applications, howe
 
 # Production
 
-This image is used in production at [White label sportsbook](https://www.white-label-sportsbook.net) and [Sportsbook software](https://www.sportsbooksoft.com) to host front-facing web applications for a number of sports, gaming and referral program websites
+This image is used in production at [Sportsbook software](https://www.sportsbooksoftware.com) to host front-facing web applications for a number of sports, gaming and referral program websites
