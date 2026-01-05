@@ -2064,6 +2064,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0)
   rspec-repeat
   rspec-sidekiq
+  ruby-vips
   savon
   seed_dump
   select2-rails!
