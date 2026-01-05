@@ -18,6 +18,7 @@ RUN passenger-install-apache2-module
 RUN apk add mc nmap wget curl git \
     imagemagick-dev \
     imagemagick \
+    vips vips-dev vips-tools \
     npm nodejs \
     mariadb-connector-c \
     bash \
