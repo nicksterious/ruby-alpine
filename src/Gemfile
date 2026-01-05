@@ -33,12 +33,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # write images in a structured path
 gem 'activestorage_direct_disk'
 gem 'image_processing', '~> 1.2'
-
-# create screenshots or preview of web pages
-# TODO replace gastly with something else
-# gem 'gastly', require: false
-# imagemagick stuff
 gem 'mini_magick'
+gem 'ruby-vips'
 
 gem 'seed_dump'
 
