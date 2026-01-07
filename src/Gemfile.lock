@@ -1543,6 +1543,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base_app (1.0.6)
     bindata (2.5.1)
+    blurhash (0.1.8)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     bootstrap_form (5.1.0)
@@ -1760,6 +1761,9 @@ GEM
     pg (1.5.3)
     pg_query (4.2.0)
       google-protobuf (>= 3.19.2)
+    phash-rb (0.3.0)
+      matrix
+      ruby-vips (~> 2.0)
     protocol-hpack (1.4.2)
     protocol-http (0.24.1)
     protocol-http1 (0.15.0)
@@ -1953,6 +1957,8 @@ GEM
       unf_ext
     unf_ext (0.0.8.2)
     uniform_notifier (1.16.0)
+    vips (8.15.1)
+      ffi (~> 1.12)
     wasabi (3.8.0)
       addressable
       httpi (~> 3.0)
@@ -2001,6 +2007,7 @@ DEPENDENCIES
   activestorage_direct_disk
   aws-sdk (~> 3)
   blazer!
+  blurhash
   bootsnap (>= 1.1.0)
   bootstrap_form (>= 4.2.0)
   brakeman
@@ -2050,6 +2057,7 @@ DEPENDENCIES
   paper_trail
   pg
   pg_query (>= 0.9.0)
+  phash-rb
   prowl
   puma (~> 3.11)
   rack-mini-profiler
@@ -2085,6 +2093,7 @@ DEPENDENCIES
   trix
   twilio-ruby
   tzinfo-data
+  vips
   webauthn (~> 3.4.2)
   webdrivers (~> 4.2)
   webrick
