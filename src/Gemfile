@@ -34,7 +34,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activestorage_direct_disk'
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
-gem 'ruby-vips'
+gem 'ruby-vips', require: false
+gem "vips", require: false
+gem "blurhash", require: false
+gem 'phash-rb', require: false
+
 
 gem 'seed_dump'
 
