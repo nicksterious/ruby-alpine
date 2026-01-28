@@ -100,6 +100,10 @@ group :test do
     gem 'timecop' # time travel for specs
 end # :test
 
+# for browser automation services
+gem 'ferrum'
+gem 'vessel'
+
 # error tracking with rollbar
 gem 'rollbar'
 

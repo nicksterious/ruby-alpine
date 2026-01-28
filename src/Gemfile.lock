@@ -1541,6 +1541,7 @@ GEM
     aws-sigv2 (1.1.0)
     aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
+    base64 (0.3.0)
     base_app (1.0.6)
     bindata (2.5.1)
     blurhash (0.1.8)
@@ -1640,6 +1641,12 @@ GEM
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
+    ferrum (0.17.1)
+      addressable (~> 2.5)
+      base64 (~> 0.2)
+      concurrent-ruby (~> 1.1)
+      webrick (~> 1.7)
+      websocket-driver (~> 0.7)
     ffi (1.15.5)
     fiber-local (1.0.0)
     flamegraph (0.9.5)
@@ -1957,6 +1964,9 @@ GEM
       unf_ext
     unf_ext (0.0.8.2)
     uniform_notifier (1.16.0)
+    vessel (0.2.0)
+      ferrum (>= 0.8)
+      thor (~> 1.0)
     vips (8.15.1)
       ffi (~> 1.12)
     wasabi (3.8.0)
@@ -2032,6 +2042,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   faraday
+  ferrum
   flamegraph
   foreman
   geocoder
@@ -2093,6 +2104,7 @@ DEPENDENCIES
   trix
   twilio-ruby
   tzinfo-data
+  vessel
   vips
   webauthn (~> 3.4.2)
   webdrivers (~> 4.2)
