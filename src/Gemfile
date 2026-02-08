@@ -101,11 +101,16 @@ group :test do
 end # :test
 
 # for browser automation services
-gem 'ferrum'
-gem 'vessel'
+gem 'ferrum', require: false
+gem 'vessel', require: false
 
-# error tracking with rollbar
-gem 'rollbar'
+
+# error tracking platforms
+gem 'rollbar', require: false
+gem 'appsignal', require: false
+gem 'honeybadger', require: false
+gem "sentry-ruby", require: false
+gem "sentry-rails", require: false
 
 gem 'pg_query', '>= 0.9.0'
 # view/build reports/BI
@@ -113,7 +118,7 @@ gem 'blazer', git: "https://github.com/nicksterious/blazer", branch: "main"
 # log various stuff in the app
 gem 'notable'
 
-gem 'trend', git: "https://github.com/nicksterious/trend", branch: "main"
+gem 'trend', git: "https://github.com/nicksterious/trend", branch: "main", require: false
 
 # send events to statsd -> grafana
 gem 'statsd-instrument', require: false
@@ -128,6 +133,7 @@ gem 'nokogiri', require: false
 gem 'stringex'
 gem 'savon', require: false
 gem 'faraday', require: false
+# also add https://github.com/lostisland/faraday-retry
 gem 'socketclusterclient', '0.1.0', require: false
 
 gem 'dalli'
