@@ -11,27 +11,25 @@ ENV DEV_PACKAGES="tzdata shared-mime-info zlib-dev libxml2-dev libxslt-dev yaml-
 
 RUN apk add $DEV_PACKAGES $DEV_PACKAGES2 $APACHE_PACKAGES && \
     gem install passenger -v 6.1.2
-#     apk add --update-cache --repository 'http://nl.alpinelinux.org/alpine/edge/testing' libexecinfo libexecinfo-dev && \
     
 RUN passenger-install-apache2-module
 
 RUN apk add mc nmap wget curl git \
-    imagemagick-dev \
-    imagemagick \
+    imagemagick-dev imagemagick \
     vips vips-dev vips-tools \
     npm nodejs \
     mariadb-connector-c \
     bash \
-    postgresql-dev \
-    python3 python2 \
-    postgresql mysql-client \
-    php83-apache2 php83-gd php83-mysqli php83-zlib php83-curl php83-mbstring php83-pdo php83-pdo_mysql php83-xml php83-xmlreader php83-xmlwriter \
+    postgresql postgresql-dev mysql-client
+    
+RUN apk add python3 python2
+
+RUN apk add php83-apache2 php83-gd php83-mysqli php83-zlib php83-curl php83-mbstring php83-pdo php83-pdo_mysql php83-xml php83-xmlreader php83-xmlwriter \
     php83-ctype php83-json php83-tokenizer php83-bcmath php83-openssl php83-zip php83-session
 
 RUN ln -sf python3 /usr/bin/python
 
 RUN npm install -g yarn
-
 
 ADD src/Gemfile* ./
 RUN bundle install --jobs=8
