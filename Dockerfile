@@ -1,9 +1,9 @@
 
 ######################
 # Stage: Passenger Builder
-FROM ruby:3.0.2-alpine3.14 as PassBuilder
+FROM ruby:3.4.8-alpine3.23 as PassBuilder
 
-RUN gem install bundler -v 2.2.32
+RUN gem install bundler -v 2.6.9
 
 ENV DEV_PACKAGES="tzdata shared-mime-info zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev mariadb-connector-c" \
     DEV_PACKAGES2="procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev build-base linux-headers curl-dev pcre-dev coreutils" \
@@ -11,7 +11,7 @@ ENV DEV_PACKAGES="tzdata shared-mime-info zlib-dev libxml2-dev libxslt-dev yaml-
 
 RUN apk add $DEV_PACKAGES $DEV_PACKAGES2 $APACHE_PACKAGES && \
     apk add --update-cache --repository 'http://nl.alpinelinux.org/alpine/edge/testing' libexecinfo libexecinfo-dev && \
-    gem install passenger -v 6.0.9
+    gem install passenger -v 6.1.2
     
 RUN passenger-install-apache2-module
 
@@ -25,8 +25,8 @@ RUN apk add mc nmap wget curl git \
     postgresql-dev \
     python3 python2 \
     postgresql mysql-client \
-    php7-apache2 php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-pdo php7-pdo_mysql php7-xml php7-xmlreader php7-xmlwriter \
-    php7-ctype php7-json php7-tokenizer php7-bcmath php7-openssl php7-zip php7-session
+    php83-apache2 php83-gd php83-mysqli php83-zlib php83-curl php83-mbstring php83-pdo php83-pdo_mysql php83-xml php83-xmlreader php83-xmlwriter \
+    php83-ctype php83-json php83-tokenizer php83-bcmath php83-openssl php83-zip php83-session
 
 RUN ln -sf python3 /usr/bin/python
 
