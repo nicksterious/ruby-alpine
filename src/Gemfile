@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'dotenv-rails', git: "https://github.com/bkeepers/dotenv", branch: "master"
+gem 'dotenv-rails', git: "https://github.com/bkeepers/dotenv", branch: "main"
 
 ruby '3.4.8'
 
