@@ -22,12 +22,11 @@ RUN apk add mc nmap wget curl git \
     bash \
     postgresql postgresql-dev mysql-client
     
-RUN apk add python3 python2
+RUN apk add python3
+RUN ln -sf python3 /usr/bin/python
 
 RUN apk add php83-apache2 php83-gd php83-mysqli php83-zlib php83-curl php83-mbstring php83-pdo php83-pdo_mysql php83-xml php83-xmlreader php83-xmlwriter \
     php83-ctype php83-json php83-tokenizer php83-bcmath php83-openssl php83-zip php83-session
-
-RUN ln -sf python3 /usr/bin/python
 
 RUN npm install -g yarn
 
