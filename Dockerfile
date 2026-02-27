@@ -15,6 +15,7 @@ RUN apk add $DEV_PACKAGES $DEV_PACKAGES2 $APACHE_PACKAGES && \
 RUN passenger-install-apache2-module
 
 RUN apk add mc nmap wget curl git \
+    ncurses \
     imagemagick-dev imagemagick \
     vips vips-dev vips-tools \
     npm nodejs \
