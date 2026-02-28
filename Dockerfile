@@ -22,6 +22,14 @@ RUN apk add mc nmap wget curl git \
     mariadb-connector-c \
     bash \
     postgresql postgresql-dev mysql-client
+
+# most people would keep their DBs on the local LAN/VPC
+# so most apps don't connect to remote databases
+# so requiring TLS for database connections is pretty much bike shedding
+RUN cd /usr/bin/ && mv -f mysqldump mysqldump.old && ln -s mariadb-dump mysqldump
+RUN echo "[client]" >> /etc/my.cnf
+RUN echo "skip-ssl = true" >> /etc/my.cnf
+
     
 RUN apk add python3
 RUN ln -sf python3 /usr/bin/python
