@@ -9,20 +9,23 @@ ruby '3.4.8'
 gem 'mimemagic' #, '0.3.3', git: "https://github.com/nicksterious/mimemagic-0.3.3", branch: "main"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 7.2.0'
 
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-gem 'pg'
+#gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+#gem 'pg'
+gem 'pg', '~> 1.1'
+gem 'mysql2', '~> 0.5'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '>= 5.0'
 
 #gem 'sass-rails', '~> 5.0'
 #gem 'sassc-rails'
 gem 'terser', '~> 1.1.14'
 gem 'coffee-rails', '~> 5.0.0'
 gem 'trix'
+gem 'sprockets-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -52,7 +55,7 @@ group :development, :test do
 end
 
 group :development do
-    gem 'listen', '>= 3.0.5', '< 3.2'
+    gem 'listen', '~> 3.5'
 
     # profiling
     gem 'rack-mini-profiler'
@@ -80,7 +83,7 @@ end
 
 group :test do
     gem 'webrick'
-    gem 'rspec-rails', '~> 4.0' #, '4.0.0.beta3'
+    gem 'rspec-rails', '~> 8.0' #, '4.0.0.beta3'
     # TODO bump rspec to stable once released
     gem 'guard-rspec'
     gem 'guard-shell'
