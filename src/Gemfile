@@ -139,7 +139,7 @@ gem 'faraday', require: false
 # also add https://github.com/lostisland/faraday-retry
 
 gem 'dalli'
-gem 'connection_pool'
+gem 'connection_pool', '<3'
 gem 'rb-readline'
 gem 'http_accept_language'
 
