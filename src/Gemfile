@@ -137,7 +137,6 @@ gem 'stringex'
 gem 'savon', require: false
 gem 'faraday', require: false
 # also add https://github.com/lostisland/faraday-retry
-gem 'socketclusterclient', '0.1.0', require: false
 
 gem 'dalli'
 gem 'connection_pool'
