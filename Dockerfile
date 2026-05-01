@@ -21,7 +21,10 @@ RUN apk add mc nmap wget curl git \
     npm nodejs \
     mariadb-connector-c \
     bash \
+    jemalloc \
     postgresql postgresql-dev mysql-client
+
+ENV LD_PRELOAD=/usr/lib/libjemalloc.so.2
 
 RUN npm -v
 RUN node -v
