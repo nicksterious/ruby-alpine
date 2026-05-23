@@ -42,8 +42,10 @@ gem "vips", require: false
 gem "blurhash", require: false
 gem 'phash-rb', require: false
 
-
 gem 'seed_dump'
+
+# VCard generation gem
+# gem 'vpim', require: false
 
 # https://github.com/roidrage/lograge
 gem 'lograge'
@@ -197,7 +199,10 @@ gem 'cloudflare', require: false
 
 gem 'draper'
 
+# TODO get rid of whenever at some point...
 gem 'whenever', require: false
+gem "sidekiq-cron"
+
 
 # for the signup form https://github.com/markets/invisible_captcha
 gem 'invisible_captcha'
@@ -220,3 +225,9 @@ gem 'webauthn', '~> 3.4.2'
 
 # stripe payments
 gem 'stripe', require: false
+
+
+# movie databases
+gem 'omdb-api', '~> 1.0.0', require: false
+gem 'themoviedb', require: false
+
