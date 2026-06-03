@@ -41,6 +41,7 @@ gem 'ruby-vips', require: false
 gem "vips", require: false
 gem "blurhash", require: false
 gem 'phash-rb', require: false
+gem 'pdq', git: 'https://github.com/fetlife/pdq-ruby.git', require: false
 
 gem 'seed_dump'
 

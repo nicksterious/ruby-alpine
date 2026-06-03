@@ -5,7 +5,7 @@ FROM ruby:3.4.8-alpine3.23 as PassBuilder
 
 RUN gem install bundler -v 4.0.7
 
-ENV DEV_PACKAGES="tzdata shared-mime-info zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev mariadb-connector-c" \
+ENV DEV_PACKAGES="tzdata shared-mime-info zlib-dev libxml2-dev libxslt-dev yaml-dev sqlite-dev mariadb-connector-c clang20-libclang" \
     DEV_PACKAGES2="procps pcre libstdc++ glib-dev libc-dev openssl-dev make libxml2-dev build-base linux-headers curl-dev pcre-dev coreutils" \
     APACHE_PACKAGES="apache2-dev apr-util apr-util-dev apache2 apache2-proxy apache2-ctl apache2-ssl"
 
@@ -25,6 +25,7 @@ RUN apk add mc nmap wget curl git \
     postgresql postgresql-dev mysql-client
 
 ENV LD_PRELOAD=/usr/lib/libjemalloc.so.2
+ENV RUSTFLAGS="-C target-feature=-crt-static"
 
 RUN npm -v
 RUN node -v
