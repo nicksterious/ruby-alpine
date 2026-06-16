@@ -27,6 +27,8 @@ gem 'coffee-rails', '~> 5.0.0'
 gem 'trix'
 gem 'sprockets-rails'
 
+gem 'pagy'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
@@ -231,4 +233,3 @@ gem 'stripe', require: false
 # movie databases
 gem 'omdb-api', '~> 1.0.0', require: false
 gem 'themoviedb', require: false
-
